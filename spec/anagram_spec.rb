@@ -8,12 +8,19 @@ describe('english_check') do
     expect(phrase.checker("english", "word")).to(eq(true))
   end
 end
+describe('downcase') do
+  it('checks for cases') do
+  phrase = Anagram.new("NOON", 'noon')
+  expect(phrase.checker("NOON", "noon")).to(eq(true))
+  end
+end
 describe('anagram') do
   it('checks input for anagrams') do
   phrase = Anagram.new("noon", 'noon')
   expect(phrase.checker("noon", "noon")).to(eq(true))
   end
 end
+
 describe("palindrome") do
   it("Checks inputs for palindrome") do
     phrase = Anagram.new("noon","noon")

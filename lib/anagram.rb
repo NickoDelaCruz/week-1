@@ -16,15 +16,13 @@ class Anagram
       return true
     elsif input2.reverse == input2
       return true
+    elsif (input1 != input2)
+      return true
     elsif (input1 == input2)
       return true
+
     else
       return "you got a problem buddy"
-
-  def antigram()
-  @word = input1
-  @word2 = input2
-  
 
 
     end
