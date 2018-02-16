@@ -14,6 +14,12 @@ describe('anagram') do
   expect(phrase.english_check("noon", "noon")).to(eq(true))
   end
 end
+describe("palindrome") do
+  it("Checks inputs for palindrome") do
+    phrase = Anagram.new("noon","noon")
+    expect(phrase.english_check("noon","noon")).to(eq(true))
+ end
+end
 
 describe('antigram') do
   it('checks input antigram') do

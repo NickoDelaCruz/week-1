@@ -5,17 +5,26 @@ class Anagram
   end
 
 
+
+
   def english_check(input1, input2)
   @word = input1.downcase.gsub(/[^a-z0-9\s]/i, '').chars.sort
   @word2 = input2.downcase.gsub(/[^a-z0-9\s]/i, '').chars.sort
     if (input1 && input2 =~ /[aeiou]/)
       return true
+    elsif (input1.reverse == input1)
+      return "palindrome"
+    elsif input2.reverse == input2
+      return true
     elsif (input1 != input2)
       return true
-    elsif input1 == input2
+    elsif (input1 == input2)
       return true
+
     else
-      return "Sorry what?"
+      return "you got a problem buddy"
+
+
     end
   end
 end
