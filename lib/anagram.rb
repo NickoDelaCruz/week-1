@@ -3,6 +3,7 @@ class Anagram
     @word = word1
     @word2 = word2
   end
+
   def checker(input1, input2)
   @word = input1.downcase.gsub(/[^a-z0-9\s]/i, '').split.sort
   @word2 = input2.downcase.gsub(/[^a-z0-9\s]/i, '').split.sort
@@ -18,6 +19,7 @@ class Anagram
       return true
     else
       return "you got a problem buddy"
+
     end
   end
 end
