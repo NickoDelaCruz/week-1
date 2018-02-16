@@ -13,7 +13,7 @@ class Anagram
     if (input1 && input2 =~ /[aeiou]/)
       return true
     elsif (input1.reverse == input1)
-      return "palindrome"
+      return true
     elsif input2.reverse == input2
       return true
     elsif (input1 != input2)
