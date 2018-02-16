@@ -7,7 +7,7 @@ class Anagram
 
 
 
-  def english_check(input1, input2)
+  def checker(input1, input2)
   @word = input1.downcase.gsub(/[^a-z0-9\s]/i, '').chars.sort
   @word2 = input2.downcase.gsub(/[^a-z0-9\s]/i, '').chars.sort
     if (input1 && input2 =~ /[aeiou]/)
@@ -16,13 +16,15 @@ class Anagram
       return true
     elsif input2.reverse == input2
       return true
-    elsif (input1 != input2)
-      return true
     elsif (input1 == input2)
       return true
-
     else
       return "you got a problem buddy"
+
+  def antigram()
+  @word = input1
+  @word2 = input2
+  
 
 
     end
