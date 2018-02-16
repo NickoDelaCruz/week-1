@@ -10,10 +10,11 @@ class Anagram
   @word2 = input2.downcase.gsub(/[^a-z0-9\s]/i, '').chars.sort
     if (input1 && input2 =~ /[aeiou]/)
       return true
+    elsif input1 == input2
+      return true
+    # elsif input1 != input2
+    #   return false
+
     end
   end
-
-
-
-
 end
