@@ -4,14 +4,16 @@ class Anagram
     @word2 = word2
   end
 
+  def english_check(input1, input2)
+    if (@word && @word2 =~ /[aeiou]/)
+      return true
+    end
+  end
+
   def checker(input1, input2)
   @word = input1.downcase.gsub(/[^a-z0-9\s]/i, '').split.sort
   @word2 = input2.downcase.gsub(/[^a-z0-9\s]/i, '').split.sort
-    if (input1 && input2 =~ /[aeiou]/)
-      return true
-    elsif (input1.reverse == input1)
-      return true
-    elsif input2.reverse == input2
+    if (input1.reverse == input1) || (input2.reverse == input2)
       return true
     elsif (input1 != input2)
       return true
