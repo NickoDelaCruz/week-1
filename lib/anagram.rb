@@ -13,6 +13,8 @@ class Anagram
       return "Anagram alert!"
     elsif input1.scan(/[aeiouy]/).count == 0
       return "English please"
+    elsif input2.scan(/[aeiouy]/).count == 0
+      return "English please"
     elsif input1.chars.sort() != input2.chars.sort()
       return "Antigram alert!"
     else
