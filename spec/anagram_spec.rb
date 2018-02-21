@@ -4,7 +4,7 @@ require("anagram")
 describe('english_check') do
   it("Makes sure the inputs are english words") do
     phrase = Anagram.new("english","word")
-    expect(phrase.english_check("english", "word")).to(eq(true))
+    expect(phrase.checker("english", "word")).to(eq(true))
   end
 end
 describe('downcase') do

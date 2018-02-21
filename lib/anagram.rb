@@ -1,14 +1,8 @@
 class Anagram
-  def initialize(word1, word2)
-    @word = word1
-    @word2 = word2
+  def initialize(input)
+    @word = word
   end
 
-  def english_check(input1, input2)
-    if (@word && @word2 =~ /[aeiou]/)
-      return true
-    end
-  end
 
   def checker(input1, input2)
   @word = input1.downcase.gsub(/[^a-z0-9\s]/i, '').split.sort
