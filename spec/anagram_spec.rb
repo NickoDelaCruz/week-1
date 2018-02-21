@@ -1,33 +1,26 @@
 require("rspec")
 require("anagram")
 
+
 describe('english_check') do
-  it("Makes sure the inputs are english words") do
-    phrase = Anagram.new("english","word")
-    expect(phrase.checker("english", "word")).to(eq(true))
+  it("Checks for English words") do
+    phrase = Anagram.new("HELL0")
+    expect(phrase.checker("HELL0", "noon")).to(eq("English please"))
   end
-end
-describe('downcase') do
-  it('checks for cases') do
-  phrase = Anagram.new("NOON", 'noon')
-  expect(phrase.checker("NOON", "noon")).to(eq(true))
+  it("Checks if two words are anagrams") do
+    phrase = Anagram.new("noon")
+    expect(phrase.checker("noon", "noon")).to(eq("Anagram alert!"))
   end
-end
-describe('anagram') do
-  it('checks input for anagrams') do
-  phrase = Anagram.new("noon", 'noon')
-  expect(phrase.checker("noon", "noon")).to(eq(true))
+  it("Checks lower/upper cases for anagram matches") do
+    phrase = Anagram.new("NOON")
+    expect(phrase.checker("noon", "NOON")).to(eq("Anagram alert!"))
   end
-end
-describe("palindrome") do
-  it("Checks inputs for palindrome") do
-    phrase = Anagram.new("noon","noon")
-    expect(phrase.checker("noon","noon")).to(eq(true))
- end
-end
-describe('antigram') do
-  it('checks input antigram') do
-  phrase = Anagram.new("hello", 'noon')
-  expect(phrase.checker("hello", "noon")).to(eq(true))
+  it("Checks if two words are antigrams") do
+    phrase = Anagram.new("Hello")
+    expect(phrase.checker("Hello", "Goodbye")).to(eq("Antigram alert!"))
+  end
+  it("Checks if inputted words does not contain spaces or any punctuations") do
+    phrase = Anagram.new("leet sp33k")
+    expect(phrase.checker("leet sp33k", "33 spleet")).to(eq("Antigram alert!"))
   end
 end

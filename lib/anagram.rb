@@ -1,21 +1,22 @@
 class Anagram
+
   def initialize(input)
-    @word = word
+    @input = input
   end
 
-
   def checker(input1, input2)
-  @word = input1.downcase.gsub(/[^a-z0-9\s]/i, '').split.sort
-  @word2 = input2.downcase.gsub(/[^a-z0-9\s]/i, '').split.sort
-    if (input1.reverse == input1) || (input2.reverse == input2)
-      return true
-    elsif (input1 != input2)
-      return true
-    elsif (input1 == input2)
-      return true
+    @input = input1.gsub(/[ ';>.,!<?]/, '')
+    input2 = input2.gsub(/[ ';>.,!<?]/, '')
+    if input1.chars.sort() == input2.chars.sort()
+      return "Anagram alert!"
+    elsif input1.downcase().chars.sort() == input2.downcase().chars.sort()
+      return "Anagram alert!"
+    elsif input1.scan(/[aeiouy]/).count == 0
+      return "English please"
+    elsif input1.chars.sort() != input2.chars.sort()
+      return "Antigram alert!"
     else
-      return "you got a problem buddy"
-
+      return "Something went wrong."
     end
   end
 end
